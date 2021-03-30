@@ -4,14 +4,7 @@ from .forms import CreateUserForm, Imageform
 from .models import Imageloader
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
-from rest_framework.authentication import SessionAuthentication
-from rest_framework import routers, serializers, viewsets
-from rest_framework.permissions import IsAuthenticated
-from rest_framework.throttling import AnonRateThrottle, UserRateThrottle
 def home(request):
-    authenticate_classes=[SessionAuthentication]
-    permission_classes = [IsAuthenticated]
-    throttle_classes = [AnonRateThrottle, UserRateThrottle]
     return render(request,'img/home.html')
 def contact(request):
     return render(request, 'img/contact.html')
