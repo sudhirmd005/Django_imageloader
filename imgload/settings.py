@@ -26,7 +26,7 @@ SECRET_KEY = 'jfywaqn460wum%0hke10bd^s&&&z*cd2j2!jjyz2kxwf)%4krk'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*', ' https://picturegallary.herokuapp.com/']
+ALLOWED_HOSTS = ['sudhird.pythonanywhere.com']
 
 
 # Application definition
@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
-    'rest_framework',
 ]
 SITE_ID = 1
 
@@ -56,7 +55,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'imgload.urls'
@@ -90,10 +88,8 @@ DATABASES = {
     }
 }
 AUTHENTICATION_BACKENDS = [
-    # Needed to login by username in Django admin, regardless of `allauth`
     'django.contrib.auth.backends.ModelBackend',
 
-    # `allauth` specific authentication methods, such as login by e-mail
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
@@ -116,13 +112,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-REST_FRAMEWORK = {
-    # Use Django's standard `django.contrib.auth` permissions,
-    # or allow read-only access for unauthenticated users.
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    ]
-}
 
 
 # Internationalization
@@ -160,17 +149,3 @@ SOCIALACCOUNT_PROVIDERS = {
     }
 }
 
-REST_FRAMEWORK ={
-    'DEFAULT_THROTTLE_RATE':{
-        'anon':'10/days',
-        'user':'15/hour',
-    }
-}
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-# Extra lookup directories for collectstatic to find static files
-# STATICFILES_DIRS = (
-#     os.path.join(BASE_DIR, 'static'),
-# )
-
-# #  Add configuration for static files storage using whitenoise
-# STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
