@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
+ 
 ]
 SITE_ID = 1
 
@@ -89,7 +90,6 @@ DATABASES = {
 }
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
-
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
