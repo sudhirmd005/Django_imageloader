@@ -1,0 +1,147 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/img.css' %}">
+    <title>Picture Gallary</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+</head>
+<body>
+    <!-- <div class="waves">
+    </div> -->
+    {% csrf_token %}
+      <nav class="navbar navbar-expand-lg navbar-light .text-dark" id="navbarr">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="{% url 'home1' %}" style="font-size:0.8cm;font-weight:bolder;font-family: 'Pacifico', cursive;">Picture Gallery</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavoption">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'home' %}" style="margin-top: 20px;padding:10px;">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link"  style="font-weight: bold;margin-top: 20px;padding:10px;" href="{% url 'contact' %}">Contact_us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'upload' %}" style="height:40px;margin-top:21px;"> Upload image</a>
+              </li>
+                 <span style="margin-top: 30px; margin-left:20px;">Hello, {{request.user}}</span>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'handlelogout' %}" style="height:40px;margin-top:25px; margin-left:25px;">Logout</a>
+              </li>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+<br>
+<br>
+<br>
+<br>
+
+
+<div class="container" style="background-color: rgb(168, 156, 223);border:0.5px solid rgb(122, 121, 121); width:1100px; height:350px; padding:30px;box-shadow:20px 20px 50px rgb(177, 175, 175);border-radius:35px;">
+    <p class="p1">
+        An art museum is a building or space for the display of art, usually from the museum's own collection. It might be in public or private ownership and may be accessible to all or have restrictions in place. Although primarily concerned with visual art, art museums are often used as a venue for other cultural exchanges and artistic activities, such as performance arts, music concerts, or poetry readings. Art museums also frequently host themed temporary exhibitions, which often include items on loan from other collections.
+
+        Gallery is a general term for any building or room used to display art, but unlike an art gallery operated by an art dealer, works from the collection of an art museum are not generally for sale, but held in public trust.Removal of a work from the collection of a museum is deaccessioning, a process defined by the museum's collection management policy.
+    </p>
+    <p class="p2">
+        An image (from Latin: imago) is an artifact that depicts visual perception, such as a photograph or other two-dimensional picture, that resembles a subject—usually a physical object—and thus provides a depiction of it. In the context of signal processing, an image is a distributed amplitude of color(s).A pictorial script is a writing system that employs images as symbols for various semantic entities, rather than the abstract signs used by alphabets.
+        The word 'image' is also used in the broader sense of any two-dimensional figure such as a map, a graph, a pie chart, a painting or a banner. In this wider sense, images can also be rendered manually, such as by drawing, the art of painting, carving, rendered automatically by printing or computer graphics technology, or developed by a combination of methods, especially in a pseudo-photograph.
+    </p>
+</div>
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+  <h2>Image Gallery</h2>
+  Art is a diverse range of (the products of) human activities involving the conscious use of creative imagination to express technical proficiency, beauty, emotional power, or conceptual ideas.
+  There is no generally agreed definition of what constitutes art,and ideas have changed over time. The three classical branches of visual art are painting, sculpture, and architecture.Theatre, dance, and other performing arts, as well as literature, music, film and other media such as interactive media, are included in a broader definition of the arts.Until the 17th century, art referred to any skill or mastery and was not differentiated from crafts or sciences. In modern usage after the 17th century, where aesthetic considerations are paramount, the fine arts are separated and distinguished from acquired skills in general, such as the decorative or applied arts.
+  An image (from Latin: imago) is an artifact that depicts visual perception, such as a photograph or other two-dimensional picture, that resembles a subject—usually a physical object—and thus provides a depiction of it. In the context of signal processing, an image is a distributed amplitude of color(s).A pictorial script is a writing system that employs images as symbols for various semantic entities,  rather than the abstract signs used by alphabets.
+  The word 'image' is also used in the broader sense of any two-dimensional figure such as a map, a graph, a pie chart, a painting or a banner. In this wider sense, images can also be rendered manually, such as by drawing, the art of painting, carving, rendered automatically by printing or computer graphics technology, or developed by a combination of methods, especially in a pseudo-photograph..</p>
+      <br>
+      <br>
+      <br>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="{% static 'css/imgg/wildal.jpg' %}" class="c1" target="_blank">
+          <img src="{% static 'css/imgg/wildal.jpg' %}" alt="Lights" width="200px;" height="150px;" style="width:100%">
+          <div class="caption">
+            <p class="p3">Wild_Life Sanctuary</p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="{% static 'css/imgg/vango.jpg' %}"  class = "c1" target="_blank">
+          <img src="{% static 'css/imgg/vango.jpg' %}" alt="Art museum" width="200px;" height="150px;" style="width:100%">
+          <div class="caption">
+            <p>Vango Art Museum</p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="{% static 'css/imgg/ep.jpg' %}" class="c1" target="_blank">
+          <img src="{% static 'css/imgg/ep.jpg' %}" alt="Nature" width="200px;" height="150px;" style="width:100%">
+          <div class="caption">
+            <p>Nature Art Muesum</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="{% static 'css/imgg/kr.jpg' %}" class="c1" target="_blank">
+          <img src="{% static 'css/imgg/kr.jpg' %}" alt="Lights" width="200px;" height="150px;" style="width:100%">
+          <div class="caption">
+            <p>Radha krishna.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="{% static 'css/imgg/c1.jpg' %}"  class ="c1" target="_blank">
+          <img src="{% static 'css/imgg/c1.jpg' %}" alt="Lights" width="200px;" height="150px;" style="width:100%">
+          <div class="caption">
+            <p>Art Structure.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="{% static 'css/imgg/n3.jpg' %}" class="c1" target="_blank">
+          <img src="{% static 'css/imgg/n3.jpg' %}" alt="Lights" width="200px;" height="150px;" style="width:100%">
+          <div class="caption">
+            <p>Nature.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<br><br>
+</body>
+</html>
